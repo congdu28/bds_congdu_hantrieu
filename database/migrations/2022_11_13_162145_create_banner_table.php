@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('banner_name');
             $table->string('content');
             $table->string('address');
-            $table->string('show_pages');
+            $table->string('id_news');
+            $table->string('id_projects');
             $table->string('links');
             $table->string('status');
             $table->timestamps();
