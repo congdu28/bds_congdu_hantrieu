@@ -1,0 +1,232 @@
+
+/*.skin-blue .main-header .navbar{*/
+	/*background-color: #374850;*/
+/*}*/
+/*.skin-blue .main-header .logo {*/
+    /*background-color: #1a2226;*/
+/*}*/
+
+.skin-blue .main-header .navbar{
+    background-color: #2774a0;
+}
+.skin-blue .main-header .logo {
+    background-color: #2774a0;
+}
+
+.text-info {
+    color: #2774a0;
+}
+
+.login-box, .register-box {
+    width: 360px;
+    margin: 0% auto;
+}
+.alert {
+    padding: 5px;
+    margin-bottom: 5px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.btn, input, select, .form-control{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+
+.table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ccc;
+}
+.table-bordered>tbody>tr>th{
+    background: #eee;
+}
+
+.table-bordered {
+    border-top:2px solid #2774a0;
+}
+
+.table-bordered>tbody>tr:hover{
+    background: #b4ddf5;
+}
+
+
+
+@media screen and (max-width: 767px){
+    .table-responsive{
+
+        border-top:2px solid #2774a0;
+    }
+    .table-responsive>.table-bordered{
+        border: none;
+    }
+    .table-bordered>tbody>tr>th{border-top:none;}
+}
+
+
+    .skin-blue .content-header{
+    background: #eee;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.skin-blue .content-header ol{
+    /*margin-top: -5px;*/
+    float: none;
+    list-style: none;
+    padding: 0px;
+    margin:0px;
+
+
+}
+.skin-blue .content-header ol li{
+    display: inline-block;
+}
+/*.skin-blue .content-header ol>li+li:before{*/
+    /*color: #9b9b9b;*/
+    /*content: '>\00a0';*/
+    /*padding-left: 5px;*/
+    /*padding-right: 5px;*/
+/*}*/
+.skin-blue .content-header h1{
+    font-family: arial;
+    font-size: 22px;
+    padding-top: 5px;
+}
+
+.breadcrumb {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    background: none;
+
+}
+.content-header .breadcrumb>li>a, .content-header .breadcrumb li{
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+.clearfix{
+    clear: both;
+}
+.content-wrapper{
+    background: #fff;
+}
+.pagination{
+    margin:0px;
+}
+.toolbar-box{
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 5px;
+}
+.toolbar-box input,.toolbar-box select{
+    height: 30px;
+
+    border: 1px solid #ccc;
+    padding-left: 3px;
+}
+.toolbar-box form .btn{
+    /*margin-top: -3px;*/
+    height: 30px;
+}
+
+
+.skin-blue .content .table-toolbar{
+    padding: 0px;
+
+}
+
+.filter-box{
+    float:left;
+}
+.tool-box{
+    float: right;
+}
+.skin-blue .content-header h1.btn-spx-toggle-toolbar{
+    cursor: pointer;
+
+}
+
+@media (max-width: 991px){
+    .skin-blue .content-header ol{
+        margin-top: 5px;
+    }
+}
+.info-box .info-box-content a{
+    color: #fff;
+    text-transform: none;
+    display: block;
+}
+.info-box .info-box-content a:hover{
+    color: yellow;
+}
+.filter-box .col-md-2,.filter-box .col-sm-2,.filter-box .col-xs-6{
+    margin-bottom: 10px;
+}
+
+.form-control{
+    padding: 3px;
+    height: 30px;
+}
+.form-group {
+     margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+
+.spx-table-user-info{
+
+}
+.spx-table-user-info tr>td:first-child{
+    width: 150px;
+    font-style: italic;
+    text-align: right;
+}
+
+.spx-table-user-info tr:last-child td {
+    border-bottom: 1px solid #f4f4f4;
+}
+.pd-right-10{
+    padding-right: 10px;
+}
+.pd-top-10{
+    padding-top: 10px;
+}
+
+.tb_info_hv{
+
+}
+
+.tb_info_hv tr>td:first-child{
+    width: 150px;
+    font-style: italic;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.box-body a{
+    white-space: nowrap;}
+.home-group-link {
+    min-height:103px;
+}
+@media screen and (max-width: 1200px) {
+    .home-group-link {
+        min-height:125px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .home-group-link {
+        min-height:50px;
+    }
+}
+

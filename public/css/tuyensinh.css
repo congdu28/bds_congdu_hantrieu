@@ -1,0 +1,64 @@
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    padding: 3px 0px;
+    height: 30px;
+}
+
+.select2-container {
+    /*margin-top: -5px;*/
+}
+
+option {
+    white-space: nowrap;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 0px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: #216992;
+}
+
+.select2-container--default .select2-selection--multiple {
+    margin-top: 10px;
+    border-radius: 0;
+}
+.fix-height{
+    max-height: 500px;
+    overflow: auto;
+}
+.hand-animation{
+    /*border: 1px solid red;*/
+    text-align: center;
+    /*width: 100px;*/
+    position: relative;
+    animation: myAnimation 5s ease-out infinite;
+    -moz-animation: myAnimation 5s ease-out infinite;
+    -webkit-animation: myAnimation 5s ease-out infinite;
+    -o-animation: myAnimation 5s ease-out infinite;
+}
+
+@keyframes myAnimation {
+    from {transform: skewY(-5deg);color:#ffffff;}
+    to {transform: skewY(5deg);color:#3f51b5;}
+}
+
+/* Hien thi cho Firefox */
+@-moz-keyframes myAnimation {
+    from {transform: skewY(-5deg);color:#ffffff;}
+    to {transform: skewY(5deg);color:#3f51b5;}
+}
+
+/* Hien thi cho Safari and Chrome */
+@-webkit-keyframes myAnimation {
+    from {transform: skewY(-5deg);color:#ffffff;}
+    to {transform: skewY(5deg);color:#3f51b5;}
+}
+
+/* Hien thi cho Opera */
+@-o-keyframes myAnimation {
+    from {transform: skewY(-5deg);color:#ffffff;}
+    to {transform: skewY(5deg);color:#3f51b5;}
+}
