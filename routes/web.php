@@ -31,5 +31,6 @@ Route::get('/logout',['as'=>'logout','uses'=>'Auth\LoginController@getLogout']);
 // Dùng để bảo vệ các đường link, chỉ cần cho vào đây
 Route::middleware(['auth'])->group(function(){
     // Phải login mới vào admin được
-    Route::get('/test','TestController@index');
+    Route::get('/test','TestController@index')->name('route_BackEnd_test_index');
+    Route::match(['get','post'], 'test/add','TestController@add')->name('route_BackEnd_test_add');
 });

@@ -79,12 +79,12 @@
                     <div class="col-xs-12" style="text-align:center;">
                         <div class="form-group">
                             <button type="submit" name="btnSearch" class="btn btn-primary btn-sm "><i
-                                    class="fa fa-search" style="color:white;"></i> Search
+                                    class="fa fa-search" style="color:white;"></i> Tìm kiếm
                             </button>
                             <a href="{{ url('/user') }}" class="btn btn-default btn-sm "><i class="fa fa-remove"></i>
-                                Clear </a>
-                            <a href="" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
-                                Add new</a>
+                                Xóa </a>
+                            <a href="{{route('route_BackEnd_test_add')}}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
+                                Thêm</a>
                         </div>
                     </div>
                 </div>
