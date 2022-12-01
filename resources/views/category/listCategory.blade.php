@@ -1,5 +1,5 @@
 @extends('templates.layout')
-@section('title', '123456')
+@section('title', 'Danh Muc')
 @section('css')
     <style>
         body {
@@ -9,6 +9,10 @@
             -ms-user-select: none;
             -o-user-select: none;*/
             user-select: none;
+        }
+
+        .toolbar-box form .btn {
+            /*margin-top: -3px!important;*/
         }
 
         .select2-container {
@@ -67,7 +71,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="form-group">
-                            <input type="text" name="search_ten_nguoi_dung" class="form-control" placeholder="Tên người dùng"
+                            <input type="text" name="search_ten_nguoi_dung" class="form-control" placeholder="Tên danh mục"
                                    value="">
                         </div>
                     </div>
@@ -75,12 +79,12 @@
                     <div class="col-xs-12" style="text-align:center;">
                         <div class="form-group">
                             <button type="submit" name="btnSearch" class="btn btn-primary btn-sm "><i
-                                    class="fa fa-search" style="color:white;"></i> Tìm kiếm
+                                    class="fa fa-search" style="color:white;"></i> Search
                             </button>
                             <a href="{{ url('/user') }}" class="btn btn-default btn-sm "><i class="fa fa-remove"></i>
-                                Xóa </a>
-                            <a href="{{route('route_BackEnd_test_add')}}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
-                                Thêm</a>
+                                Clear </a>
+                            <a href="{{ route('route_BackEnd_category_addCategory') }}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
+                                Add new</a>
                         </div>
                     </div>
                 </div>
@@ -136,36 +140,22 @@
             <form action="" method="post">
                 @csrf
                 <span class="pull-right">Tổng số bản ghi tìm thấy: <span
-                        style="font-size: 15px;font-weight: bold;">15</span></span>
+                        style="font-size: 15px;font-weight: bold;">8</span></span>
                 <div class="clearfix"></div>
                 <div class="double-scroll">
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 50px" class="text-center"> ID </th>
-                            <th class="text-center">Tên người dùng</th>
-                            <th class="text-center"> Email </th>
-                            <th class="text-center">Ảnh</th>
-                            <th class="text-center">Trạng thái</th>
+                            <th class="text-center">Tên Danh Mục</th>
                         </tr>
 
                           @foreach($list as $items)
                             <tr>
                                 {{--     <td><input type="checkbox" name="chk_hv[]" class="chk_hv" id="chk_hv_{{$item->id}}" value="{{$item->id}}"> </td>--}}
                                 <td class="text-center">{{$items -> id}} </td>
-                                <td class="text-center"><a style="color:#333333;font-weight: bold;" href="{{route('route_BackEnd_test_detail',['id'=>$items->id])}}" style="white-space:unset;text-align: justify;">
-                                       {{$items -> user_name}} 
+                                <td class="text-center"><a style="color:#333333;font-weight: bold;" href="{{route('route_BackEnd_category_detailCategory',['id'=>$items->id])}}" style="white-space:unset;text-align: justify;">
+                                       {{$items -> category_name}}
                                    <i class="fa fa-edit"></i></a></td>
-                                <td class="text-center">{{$items -> email}}</td>
-                                <td class="text-center">
-                                    <img id=""
-                                             src="{{ $items->hinh?''.Storage::url($items->hinh):'http://placehold.it/100x100' }}"
-                                             alt="your image"
-                                             style="max-width: 200px; height:100px; margin-bottom: 10px; text-align:center ;" class="img-responsive"/>
-                                    <label for="cmt_truoc">Mặt trước</label><br/>
-                                </td>
-                                <td class="text-center">
-                                   Nhân viên
-                                </td>
                             </tr>
                            @endforeach
                     </table>
@@ -174,6 +164,7 @@
         </div>
         <br>
         <div class="text-center" >
+
             {{ $list->appends($extParams)->links() }}
         </div>
         <index-cs ref="index_cs"></index-cs>

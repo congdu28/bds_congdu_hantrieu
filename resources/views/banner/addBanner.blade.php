@@ -76,29 +76,22 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên người dùng <span class="text-danger">(*)</span></label>
-
+                            <h1 style="text-align: center; color:springgreen">THÊM BANNER</h1>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên Banner <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="user_name" id="name" class="form-control" value="@isset($request['user_name']){{ $request['user_name'] }}@endisset">
+                                <input type="text" name="banner_name" id="name" class="form-control" value="@isset($request['banner_name']){{ $request['banner_name'] }}@endisset">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Email <span class="text-danger">(*)</span></label>
+                            <label for="email" class="col-md-3 col-sm-4 control-label">Links <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="email" id="email" class="form-control" value="@isset($request['email']){{ $request['email'] }}@endisset">
+                                <input type="text" name="links" id="email" class="form-control" value="@isset($request['links']){{ $request['links'] }}@endisset">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Mật khẩu <span class="text-danger">(*)</span></label>
-                            <div class="col-md-9 col-sm-8">
-                                <input type="password" name="password" id="password" class="form-control" value="@isset($request['password']){{ $request['password'] }}@endisset">
-                                <span id="mes_sdt"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 col-sm-4 control-label">Ảnh CMND/CCCD</label>
+                            <label class="col-md-3 col-sm-4 control-label">Ảnh</label>
                             <div class="col-md-9 col-sm-8">
                                 <div class="row">
                                     <div class="col-xs-6">
@@ -106,7 +99,7 @@
                                              style="max-width: 220px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
                                         <input type="file" name="cmt_mat_truoc" accept="image/*"
                                                class="form-control-file @error('cmt_mat_truoc') is-invalid @enderror" id="cmt_truoc">
-                                        <label for="cmt_truoc">Mặt trước</label><br/>
+                                        <label for="cmt_truoc"></label><br/>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +111,7 @@
             <!-- /.box-body -->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"> Thêm</button>
-                <a href="{{ route('route_BackEnd_test_index') }}" class="btn btn-default">Hủy</a>
+                <a href="{{ route('route_BackEnd_banner_listBanner') }}" class="btn btn-default">Hủy</a>
             </div>
             <!-- /.box-footer -->
         </form>

@@ -1,4 +1,4 @@
-<?php 
+<?php
    $objUser = \Illuminate\Support\Facades\Auth::user();
 ?>
 
@@ -209,28 +209,37 @@
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Danh Mục</span></a>
+                    <a href="{{route('route_BackEnd_category_listCategory')}}"><i class="fa fa-user"></i> <span>Danh Mục</span></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i
+                        <li><a href="{{route('route_BackEnd_category_addCategory')}}"><i
                                     class="fa fa-circle-o"></i>Thêm Danh Mục</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Tin Tức</span></a>
+                    <a href="{{route('route_BackEnd_news_listNews')}}"><i class="fa fa-user"></i> <span>Tin Tức</span></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i
+                        <li><a href="{{route('route_BackEnd_news_addNews')}}"><i
                                     class="fa fa-circle-o"></i>Thêm Tin Tức</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Dự Án</span></a>
+                    <a href="{{route('route_BackEnd_project_listProject')}}"><i class="fa fa-user"></i> <span>Dự Án</span></a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i
+                        <li><a href="{{route('route_BackEnd_project_addProject')}}"><i
                                     class="fa fa-circle-o"></i>Thêm Dự Án</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class=" active menu-open ">
+                    <a href="{{route('route_BackEnd_banner_listBanner')}}"><i class="fa fa-user"></i> <span>Banner</span></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('route_BackEnd_banner_addBanner')}}"><i
+                                    class="fa fa-circle-o"></i>Thêm Banner</a></li>
                     </ul>
                 </li>
             </ul>

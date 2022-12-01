@@ -70,23 +70,22 @@
     @endif
 
     <!-- Phần nội dung riêng của action  -->
-        <form class="form-horizontal " action="" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal " action="{{route('route_BackEnd_test_update',['id'=>request()->route('id')])}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên người dùng <span class="text-danger">(*)</span></label>
-
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="user_name" id="name" class="form-control" value="@isset($request['user_name']){{ $request['user_name'] }}@endisset">
+                                <input type="text" name="user_name" id="name" class="form-control" value="{{$objItem->user_name}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-md-3 col-sm-4 control-label">Email <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="email" id="email" class="form-control" value="@isset($request['email']){{ $request['email'] }}@endisset">
+                                <input type="text" name="email" id="email" class="form-control" value="{{$objItem->email}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
@@ -98,16 +97,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 col-sm-4 control-label">Ảnh CMND/CCCD</label>
+                            <label class="col-md-3 col-sm-4 control-label">Ảnh CMND/CCCD <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <img id="mat_truoc_preview" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
-                                             style="max-width: 220px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
+                                        <img id="mat_truoc_preview"
+                                             src="{{ $objItem->hinh?''.Storage::url($objItem->hinh):'http://placehold.it/100x100' }}"
+                                             alt="your image"
+                                             style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-responsive"/>
                                         <input type="file" name="cmt_mat_truoc" accept="image/*"
                                                class="form-control-file @error('cmt_mat_truoc') is-invalid @enderror" id="cmt_truoc">
                                         <label for="cmt_truoc">Mặt trước</label><br/>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -117,8 +119,8 @@
             </div>
             <!-- /.box-body -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary"> Thêm</button>
-                <a href="{{ route('route_BackEnd_test_index') }}" class="btn btn-default">Hủy</a>
+                <button type="submit" class="btn btn-primary"> Save</button>
+                <a href="{{ route('route_BackEnd_test_index') }}" class="btn btn-default">Cancel</a>
             </div>
             <!-- /.box-footer -->
         </form>

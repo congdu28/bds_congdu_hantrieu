@@ -70,55 +70,71 @@
     @endif
 
     <!-- Phần nội dung riêng của action  -->
-        <form class="form-horizontal " action="" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal " action="{{route('route_BackEnd_project_updateProject',['id'=>request()->route('id')])}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên người dùng <span class="text-danger">(*)</span></label>
-
+                            <h1 style="text-align: center;" class="m-3">CẬP NHẬT DỰ ÁN</h1>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên Dự Án <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="user_name" id="name" class="form-control" value="@isset($request['user_name']){{ $request['user_name'] }}@endisset">
+                                <input type="text" name="project_name" id="name" class="form-control" value="{{$objItem->project_name}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Email <span class="text-danger">(*)</span></label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Chủ đầu tư <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="email" id="email" class="form-control" value="@isset($request['email']){{ $request['email'] }}@endisset">
+                                <input type="text" name="owner" id="name" class="form-control" value="{{$objItem->owner}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Mật khẩu <span class="text-danger">(*)</span></label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Trạng thái <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="password" name="password" id="password" class="form-control" value="@isset($request['password']){{ $request['password'] }}@endisset">
+                                <input type="text" name="status" id="name" class="form-control" value="{{$objItem->status}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 col-sm-4 control-label">Ảnh CMND/CCCD</label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Địa chỉ <span class="text-danger">(*)</span></label>
+                            <div class="col-md-9 col-sm-8">
+                                <input type="text" name="address" id="name" class="form-control" value="{{$objItem->address}}">
+                                <span id="mes_sdt"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4 control-label">Ảnh <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <img id="mat_truoc_preview" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
-                                             style="max-width: 220px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
+                                        <img id="mat_truoc_preview"
+                                             src="{{ $objItem->images?''.Storage::url($objItem->images):'http://placehold.it/100x100' }}"
+                                             alt="your image"
+                                             style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-responsive"/>
                                         <input type="file" name="cmt_mat_truoc" accept="image/*"
                                                class="form-control-file @error('cmt_mat_truoc') is-invalid @enderror" id="cmt_truoc">
-                                        <label for="cmt_truoc">Mặt trước</label><br/>
+                                        <label for="cmt_truoc"></label><br/>
                                     </div>
+
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Mô tả <span class="text-danger">(*)</span></label>
+                            <div class="col-md-9 col-sm-8">
+                                <input type="text" name="description" id="name" class="form-control" value="{{$objItem->description}}">
+                                <span id="mes_sdt"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- /.box-body -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary"> Thêm</button>
-                <a href="{{ route('route_BackEnd_test_index') }}" class="btn btn-default">Hủy</a>
+                <button type="submit" class="btn btn-primary"> Save</button>
+                <a href="{{ route('route_BackEnd_project_listProject') }}" class="btn btn-default">Cancel</a>
             </div>
             <!-- /.box-footer -->
         </form>

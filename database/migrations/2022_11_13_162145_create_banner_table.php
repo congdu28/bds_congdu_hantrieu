@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('id_news');
             $table->string('id_projects');
             $table->string('links');
+            $table->string('images');
             $table->string('status');
             $table->timestamps();
         });

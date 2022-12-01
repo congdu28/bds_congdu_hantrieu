@@ -5,30 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class Test extends Model
+class News extends Model
 {
     use HasFactory;
-    protected $table = "users";
-    protected $fillable = ['id', 'user_name', 'email','hinh'];
+    protected $table = "news";
+    protected $fillable = ['id', 'category_news','title','images','content','description'];
 
     public function loadListWithPager($param = [])
     {
         $query = DB::table($this->table)
             ->select($this->fillable);
-        $list = $query->paginate('10'); //phân trang auto
+        $list = $query->paginate('5'); //phân trang auto
         return $list;
     }
-   
+
+    
     public function saveNew($params)
     {
-        $data = array_merge($params['cols'], [
-            'password' => Hash::make($params['cols']['password']),
-              ]
-         );
-        //   dd($data);
+        // dd($params);
+        $data = array_merge($params['cols'] );
+      
         $res = DB::table($this->table)->insertGetId($data);
         return $res;
     }

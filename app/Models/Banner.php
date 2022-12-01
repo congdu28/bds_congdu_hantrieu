@@ -5,39 +5,36 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
-class Test extends Model
+class Banner extends Model
 {
     use HasFactory;
-    protected $table = "users";
-    protected $fillable = ['id', 'user_name', 'email','hinh'];
+    protected $table = "banner";
+    protected $fillable = ['id', 'banner_name','links','images','status'];
 
     public function loadListWithPager($param = [])
     {
         $query = DB::table($this->table)
             ->select($this->fillable);
-        $list = $query->paginate('10'); //phân trang auto
+        $list = $query->paginate('5'); //phân trang auto
         return $list;
     }
-   
+
+
     public function saveNew($params)
     {
-        $data = array_merge($params['cols'], [
-            'password' => Hash::make($params['cols']['password']),
-              ]
-         );
-        //   dd($data);
+        // dd($params);
+        $data = array_merge($params['cols'] );
         $res = DB::table($this->table)->insertGetId($data);
         return $res;
     }
 
     public function loadOne($id,$params=[]){
         $query = DB::table($this->table)
-               ->where('id','=',$id);
-               $obj = $query->first();
-               return $obj;
+            ->where('id','=',$id);
+        $obj = $query->first();
+        return $obj;
     }
 
     public function saveUpdate($params){
@@ -52,6 +49,6 @@ class Test extends Model
         $res = DB::table($this->table)
             ->where('id', $params['cols']['id'])
             ->update($dataUpdate);
-            return $res;
+        return $res;
     }
 }

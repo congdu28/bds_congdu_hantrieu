@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        $arrUser = [];
-       
+       $arrCategory = [];
         // Lặp tạo 10 data bằng hàm array_push
-        for($i=0; $i<15; $i++){
+        for($i=0; $i<10; $i++){
             array_push($arrUser,
             [
                 "user_name" => "Trương Công Dự $i" ,
@@ -30,10 +30,20 @@ class DatabaseSeeder extends Seeder
                 "created_at" => date('Y-m-d H-i-s'),
                 "updated_at" => date('Y-m-d H-i-s'),
             ]);
+            // array_push($arrCategory,
+            // [
+            //     "category_name" => "Danh Mục $i" ,
+            //     "created_at" => date('Y-m-d H-i-s'),
+            //     "updated_at" => date('Y-m-d H-i-s'),
+            // ]);
+
         }
+        // DB::table('categories')->insert(
+        //         $arrCategory
+        //     );
         DB::table('users')->insert(
                 $arrUser
-            );
+         );
     }
 
 }
