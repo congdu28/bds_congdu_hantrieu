@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 // use Illuminate\Contracts\Session\Session as Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -56,5 +57,14 @@ class LoginController extends Controller
        return redirect('login');
     }
 
+    public function user(){
+        $data = ['id'=>1];
+        $user = DB::table('users')->get();
+        return response()->json($user);
+   }
 
+   public function postUser(Request $request){
+//      dd($request->all());
+       return response()->json($request->all());
+   }
 }

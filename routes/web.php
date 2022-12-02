@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.index');
 });
 
 
@@ -35,6 +35,10 @@ Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@getLogo
 // Dùng để bảo vệ các đường link, chỉ cần cho vào đây
 Route::middleware(['auth'])->group(function () {
     // Phải login mới vào admin được
+    Route::get('/home','ClientController@index');
+    Route::get('/project_font','Project_fontController@index');
+    Route::get('/news_font','News_fontController@index');
+    Route::get('/contact_font','Contact_fontController@index');
     //user
     Route::get('/test', 'TestController@index')->name('route_BackEnd_test_index'); // danh sách user
     Route::match(['get', 'post'], 'test/add', 'TestController@add')->name('route_BackEnd_test_add'); // thêm user
