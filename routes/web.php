@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\Router;

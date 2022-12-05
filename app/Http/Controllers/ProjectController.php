@@ -48,7 +48,7 @@ class ProjectController extends Controller
     public function listProject(Request $request){
         $project = new Project();
         $this->v['extParams'] = $request->all();
-        $this->v['title'] = 'TIN TỨC';
+        $this->v['title'] = 'DỰ ÁN';
         $this->v['list'] = $project->loadListWithPager($this->v['extParams']);
         $this->v['user'] = $project->loadListWithPager($this->v['extParams']);
         return view('project.listProject', $this->v);
