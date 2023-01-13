@@ -131,7 +131,7 @@
                 </div>
             @endif
         </div>
-        @if(count($list)<=0)
+        @if(count($category)<=0)
             <p class="alert alert-warning">
                 Không có dữ liệu phù hợp
             </p>
@@ -149,7 +149,7 @@
                             <th class="text-center">Tên Danh Mục</th>
                         </tr>
 
-                          @foreach($list as $items)
+                          @foreach($category as $items)
                             <tr>
                                 {{--     <td><input type="checkbox" name="chk_hv[]" class="chk_hv" id="chk_hv_{{$item->id}}" value="{{$item->id}}"> </td>--}}
                                 <td class="text-center">{{$items -> id}} </td>
@@ -165,7 +165,7 @@
         <br>
         <div class="text-center" >
 
-            {{ $list->appends($extParams)->links() }}
+            {{ $category->appends($extParams)->links() }}
         </div>
         <index-cs ref="index_cs"></index-cs>
     </section>

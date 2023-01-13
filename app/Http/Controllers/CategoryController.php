@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $test = new Category();
         $this->v['extParams'] = $request->all();
         $this->v['title'] = 'DANH MỤC';
-        $this->v['list'] = $test->loadListWithPager($this->v['extParams']);
+        $this->v['category'] = $test->loadListWithPager($this->v['extParams']);
         $this->v['user'] = $test->loadListWithPager($this->v['extParams']);
         return view('category.listCategory', $this->v);
     }

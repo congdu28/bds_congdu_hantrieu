@@ -35,6 +35,12 @@ Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@getLogo
 // Dùng để bảo vệ các đường link, chỉ cần cho vào đây
 Route::middleware(['auth'])->group(function () {
     // Phải login mới vào admin được
+    Route::get('/home','ClientController@index');
+    Route::get('/project_font','Project_fontController@index')->name('route_BackEnd_project_font_Project_font');
+    Route::get('/project_font/detail/{id}', 'Project_fontController@detailProject_font')->name('route_BackEnd_project_font_detailProject_font');
+    Route::get('/news_font','News_fontController@index')->name('route_BackEnd_news_font_News_font');
+    Route::get('/news_font/detail/{id}', 'News_fontController@detailNews_font')->name('route_BackEnd_News_font_detailNews_font');
+    Route::get('/contact_font','Contact_fontController@index')->name('route_BackEnd_contact_font_Contact_font');
     //user
     Route::get('/test', 'TestController@index')->name('route_BackEnd_test_index'); // danh sách user
     Route::match(['get', 'post'], 'test/add', 'TestController@add')->name('route_BackEnd_test_add'); // thêm user
