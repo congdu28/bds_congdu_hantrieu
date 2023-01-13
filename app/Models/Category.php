@@ -21,12 +21,11 @@ class Category extends Model
         return $list;
     }
 
-    
+
     public function saveNew($params)
     {
         // dd($params);
         $data = array_merge($params['cols'] );
-      
         $res = DB::table($this->table)->insertGetId($data);
         return $res;
     }
